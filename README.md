@@ -30,7 +30,7 @@ Run
 python prepare_data.py
 ```
 
-and the processed training dataset is in `'./data/MSRS_train_imgsize_128_stride_200.h5'`.
+Download the processed training dataset from [this link](https://pan.quark.cn/s/56448177b637) and Place the downloaded file in the specified path `'./data/MSRS_train_imgsize_128_stride_200.h5'`.
 
 **3. Training**
 
