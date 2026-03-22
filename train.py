@@ -69,7 +69,7 @@ coeff_nice = 0.1
 coeff_cc_basic = 2.0
 coeff_gauss = 1.0
 coeff_laplace = 1.0#1.0
-coeff_freq = 1.0#频域损失原1.0
+coeff_freq = 1.0
 
 """
 ------------------------------------------------------------------------------
@@ -204,7 +204,7 @@ for epoch in range(num_epochs):
         fusionloss, _, _ = criteria_fusion(img_VI, img_IR, data_Fuse)
         loss_dict = freq_loss(data_Fuse, img_IR, img_VI)
         loss2 = fusionloss + coeff_freq * loss_dict["total"] + cc_loss
-        #loss2 = fusionloss + cc_loss没有频域损失
+        
 
         loss2.backward()
         nn.utils.clip_grad_norm_(Encoder.parameters(), clip_grad_norm_value)
@@ -274,7 +274,7 @@ for epoch in range(num_epochs):
           f"Remaining: {time_left}\n"
           "------------------------------------------------------------------")
 
-    # 每10轮保存一次
+  
     if (epoch + 1) % 40 == 0:
         save_path = os.path.join(f"checkPoints/{result_name}{epoch+1}.pth")
         checkpoint = {
