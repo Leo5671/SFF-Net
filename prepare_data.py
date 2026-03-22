@@ -68,8 +68,8 @@ data_name = "dataSet4Training"
 img_size = 128  # patch size
 stride = 200  # patch stride
 
-IR_files = sorted(get_img_file("D:/Desktop/Infrared-and-Visible/DAF-Net-main/dataSet4Training/MSRS-main/train/ir"))
-VIS_files = sorted(get_img_file("D:/Desktop/Infrared-and-Visible/DAF-Net-main/dataSet4Training/MSRS-main/train/vi"))
+IR_files = sorted(get_img_file("D:/Desktop/ir"))
+VIS_files = sorted(get_img_file("D:/Desktop/vi"))
 
 assert len(IR_files) == len(VIS_files)
 h5f = h5py.File(
